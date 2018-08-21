@@ -1,0 +1,7 @@
+{
+  "name": "snabbdom-transition",
+  "version": "0.1.0",
+  "dependencies": {
+    "snabbdom": "^0.7.1"
+  }
+}

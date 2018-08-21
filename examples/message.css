@@ -1,0 +1,35 @@
+body {
+  font-family: Open Sans;
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.message-enter-active,
+.message-leave-active {
+  transition: all 0.4s cubic-bezier(0.52, 1.29, 0.75, 1.17);
+}
+
+.message-enter {
+  transform: translate(100%, 100%);
+}
+
+.message-leave-to {
+  transform: scale(4);
+  opacity: 0;
+}
+
+.message-move {
+  transition: all 0.4s;
+}
+
+.message {
+  background: #7b46ff;
+  color: #eee;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  width: 100%;
+}

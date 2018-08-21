@@ -1,0 +1,12 @@
+dependencies:
+  snabbdom: 0.7.1
+packages:
+  /snabbdom/0.7.1:
+    dev: false
+    resolution:
+      integrity: sha512-uIOCq6rfkBZg2VdSopy9jL0cIOdrkHCcwOjDsLnjef6Z5oPoD8V7nKI8de4gP5GfvyqLY0RBDJP8LVU19Nsw5Q==
+registry: 'https://registry.npmjs.org/'
+shrinkwrapMinorVersion: 9
+shrinkwrapVersion: 3
+specifiers:
+  snabbdom: ^0.7.1

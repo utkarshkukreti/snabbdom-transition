@@ -1,0 +1,91 @@
+/* Source: https://vuejs.org/v2/guide/transitions.html */
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.slide-fade-enter,
+.slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active,
+.list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.list-move {
+  transition: transform 1s;
+}
+
+.flip-list-move {
+  transition: transform 1s;
+}
+
+.sudoku .container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 238px;
+  margin-top: 10px;
+}
+.sudoku .cell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #aaa;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+.sudoku .cell:nth-child(3n) {
+  margin-right: 0;
+}
+.sudoku .cell:nth-child(27n) {
+  margin-bottom: 0;
+}
+.sudoku .cell-move {
+  transition: transform 1s;
+}
+
+.demo {
+  padding: 2rem;
+}
