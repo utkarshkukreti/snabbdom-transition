@@ -79,11 +79,6 @@ export const remove = (vnode, callback) => {
     removeClass(elm, t.leave);
     removeClass(elm, t.leaveActive);
     removeClass(elm, t.leaveTo);
-    // Take the element off of the page layout right now if it's a direct child
-    // of a TransitionGroup.
-    if (vnode.data.isInTransitionGroup) {
-      elm.style.position = 'absolute';
-    }
     addClass(elm, t.leave);
     addClass(elm, t.leaveActive);
     nextFrame(() => {
@@ -207,7 +202,6 @@ export const TransitionGroup = (o, sel, data, children) => {
     sel,
     data,
     children.map(child => {
-      child.data.isInTransitionGroup = true;
       return Transition(o, child.sel, child.data, child.children);
     })
   );

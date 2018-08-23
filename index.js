@@ -86,11 +86,6 @@ var remove = exports.remove = function remove(vnode, callback) {
     removeClass(elm, t.leave);
     removeClass(elm, t.leaveActive);
     removeClass(elm, t.leaveTo);
-    // Take the element off of the page layout right now if it's a direct child
-    // of a TransitionGroup.
-    if (vnode.data.isInTransitionGroup) {
-      elm.style.position = 'absolute';
-    }
     addClass(elm, t.leave);
     addClass(elm, t.leaveActive);
     nextFrame(function () {
@@ -208,7 +203,6 @@ var TransitionGroup = exports.TransitionGroup = function TransitionGroup(o, sel,
   };
   data.hook = { update: update };
   return (0, _snabbdom.h)(sel, data, children.map(function (child) {
-    child.data.isInTransitionGroup = true;
     return Transition(o, child.sel, child.data, child.children);
   }));
 };
